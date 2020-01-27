@@ -1323,7 +1323,7 @@
   border-radius: 0.1875rem;
   padding: 11px 22px;
   cursor: pointer;
-  background-color: #721714;
+  background-color: #070631;
   color: #FFFFFF;
 }
 
@@ -2831,7 +2831,7 @@ small {
 }
 
 a {
-  color: #378C3F;
+  color: #101375;
 }
 
 a:hover, a:focus {
@@ -2991,8 +2991,8 @@ p {
 
 body {
   color: #241f1f;
-  font-size: 14px;
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-family: candara;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -3254,7 +3254,7 @@ body {
 }
 
 .navbar a:not(.btn):not(.dropdown-item) {
-  color: #FFFFFF;
+  color: #ffb236;
 }
 
 .navbar p {
@@ -3403,7 +3403,7 @@ body {
 }
 
 .bg-primary {
-  background-color: #721714 !important;
+  background-color: #070631!important;
 }
 
 .bg-info {
@@ -5111,7 +5111,7 @@ Created using IcoMoon - icomoon.io
 .section {
   padding: 70px 0;
   position: relative;
-  background: #e8ca76;
+  background: #f8f9fa;
 }
 
 .section .row + .category {
@@ -5170,7 +5170,7 @@ Created using IcoMoon - icomoon.io
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 0 15px;
-  color: #FFFFFF;
+  color: #070631;
   width: 100%;
   max-width: 880px;
 }
