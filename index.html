@@ -4,7 +4,51 @@
 .nopadding {
    padding: 0 !important;
    margin: 0 !important;
-}</style>
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+</style>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +56,7 @@
        
     google-site-verification: googlefaee0f3fb2c07645.html
     <title>Aishwarya Rajasekaran</title>
-    <meta name="description" content="Creative CV is a HTML resume template for professionals. Built with Bootstrap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skils and experience."/>
+    <meta name="description" content=" This is the personal website of Aishwarya Rajasekaran"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/aos.css" rel="stylesheet">
@@ -24,16 +68,15 @@
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Home</a>
+            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip"><b>Home</b></a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
               <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#project">Projects</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about"><b>About</b></a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill"><b>Skills</b></a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#project"><b>Projects</b></a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience"><b>Experience</b></a></li>
               </ul>
             </div>
           </div>
@@ -45,7 +88,7 @@
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color="blue">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/k.jpeg')"></div>
+      <div class="page-header-image" data-parallax="true" style="background-image: url('images/a.jpg')"></div>
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="images/aishu.jpg" alt="Image"/></a></div>
@@ -65,29 +108,213 @@
   <div class="container">
     <div class="card" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
+       
+          <div class="card-body">
+            
+              <p>I'm a first year MS in Computer Science student working towards Data Science Concentration at the<a href="https://www.umass.edu/"> University of Massachusetts, Amherst</a>. My research interests are broadly inclined towards building Trustworthy AI from both technical and ethical perspectives. I believe that we need to look beyond numerical performance metrics to evaluate AI systems. Social and ethical parameters should also be play a significant role during decision making. 
+               </p>
+
+              <p>I completed my B.Tech in Computer Engineering with Distinction from <a href = https://www.iiitdm.ac.in/>Indian Institute of Information Technology, Design and Manufacturing Kancheepuram</a> in 2019. I was fortunate to spend a semester and complete my Bachelor Thesis at <a href="https://www.iitm.ac.in/">IIT-Madras </a> under the guidance of <a href="https://www.cse.iitm.ac.in/~ravi/"> Prof. Balaraman Ravindran</a>.</p>
+
+              <p>Cooking, playing violin, travelling, mentoring, doodling, watching cartoons and playing basketball keeps me occupied when I am bored.</p>	
+        </div>
+        
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="section" id="experience">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Professional Experience</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>May 2018 - Oct 2018</p>
+            <div class="h5">Research Intern</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5"><a href = "https://rbc-dsai.iitm.ac.in/">Robert Bosch Center for Data Science and AI Lab, IIT Madras</a></div>
+             <p class="category">Guide : Dr Balaraman Ravindran</p>
+            <p>I worked on "Development of a Deep Learning Algorithm for Detection of Retinopathy in Retinal Fundus Photographs". The main categories are Diabetic and Hypertensive retinopathy. Interpreting these fundus photographs requires specialized training, and in many regions of the world there aren’t enough qualified graders to screen everyone who is at risk. This is where AI can help doctors identify patients in need, particularly among underserved populations.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>May 2017 - July 2017</p>
+            <div class="h5">Developer Intern</div>
+          </div>  
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5"><a href="https://cpdm.iisc.ac.in/cpdm/ideaslab/index.php">IDeaS Lab, Center for Product Design and Manufacturing, IISC Bangalore</a></div> 
+            <p class="category">Guide : Dr Amaresh Chakrabarti</p>
+            <p>Worked as a Full Stack Web Developer and designed the Database for InDeaTe, a Computer-Based Platform with a Systematic Design Template and a Database of Methods and Tools which aims at improving sustainability considerations in design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>May 2016 - June 2016</p>
+            <div class="h5">Summer Intern</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5"><a href= "https://www.drdo.gov.in/labs-and-establishments/gas-turbine-research-establishment-gtre">Gas Turbine Research and Establishment, DRDO</a></div>
+            <p class="category"></p>
+            <p>Implemented encryption and decryption of text files using DES algorithm in JAVA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-------------------------------------------------------->
+<div class="section" id="project">
+  <div class="container cc-experience">
+  <div class="h4 text-center mb-4 title">Projects</div>
+ <div class="row">
+ 	<div class="col-md-4 wow fadeInUp">
+          	<div class="card"><div class="card-body" align="center" >
+          		<p class="category" style= "color:#070631">EXPLAINABLE NN FOR IMAGE CLASSIFICATION WITH TRUST METRIC</p>
+            <div class="about-col">
+              <div class="img">
+                <img src="images/trust.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div align="justify"><br>
+              <p>Accountability and explanation of the decision is crucial in safety critical applications. The proposed method is simple and provides a post-hoc explanation for model’s decision with a confidence score.</p>
+              
+            </div>
+          </div>
+        </div></div>
+          <div class="col-md-4 wow fadeInUp">
+          	<div class="card"><div class="card-body" align="center" >
+          		<p class="category" style= "color:#070631">MINI SEARCH ENGINE</p>
+            <div class="about-col">
+              <div class="img">
+                <img src="images/search.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div> <br>
+              <p> Built a search engine in Apache Spark to create inverted index of urls. The input files were stored in HDFS. RocksDB was used for storing the inverted index and serve queries. Finally, Flask server was set up to serve the queries.
+              
+            </div>
+          </div>
+        </div></div>
+      
+          <div class="col-md-4 wow fadeInUp">
+          	<div class="card"><div class="card-body" align="center" >
+            <div class="about-col">
+            <p class="category" style= "color:#070631">IMAGE CLASSIFICATION SERVER</p> <br><br>
+              <div class="img">
+                <img src="images/classification.png" alt="" class="img-fluid"><br><br>
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div><br>
+              <p> Implemented an image classification server using pretrained Densenet-121 model. The server was set up using Flask and a Docker container was built to use the model for inference. <br><br>
+	           
+            </div>
+          </div>
+        </div></div>
+
+        
+
+         
+
+<div class="row">
+         <div class="col-md-4 wow fadeInUp">
+          	<div class="card"><div class="card-body" align="center">
+            <div class="about-col">
+            	<p class="category" style= "color:#070631"><b>FRS BASED PORTABLE ATTENDENCE SYSTEM</b></p>
+              <div class="img" align="Center">
+                <img src="images/frs.png" alt="" class="img-fluid" width="42%" height=auto>
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+                     <br>      
+	            <p>A portable attendance system to manage the student attendance at IIITDM.
+	            It is based on feature matching algorithm that runs on raspberry pi.A website was also developed to view the generated reports.</p>
+            </div>
+          </div>
+        </div></div>
+
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+          	<div class="card"><div class="card-body" align="center">
+            <div class="about-col">
+            	<p class="category"style= "color:#070631">HEART RISK PREDICTION BASED ON DATA MINING TECHNIQUES</p> 
+              <div class="img">
+                <img src="images/heart.jpg" alt="" class="img-fluid" height=auto width="60%">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+               <br>
+            <p align="center">Used data mining techniques like Linear Regression and Decision Tree to recognize and correlate various cardiac parameters with their corresponding medical conditions.<br><br></p>
+
+            </div>
+          </div></div></div>
+
+           <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+           	<div class="card"><div class="card-body" align="center" >
+           		 <p class="category"style= "color:#070631">FILTER FOR INDUSTRIAL GASEUOUS EFFLUENTS</p>
+            <div class="about-col">
+              <div class="img">
+                <img src="images/air.png" alt="" class="img-fluid" width="65%" height=auto> 
+              </div>
+	            <p><br>
+	            To reduce the amount of  gaseous effluents released by industries, an efficient dynamic filter was designed with inbuilt air quality monitoring system.</p>
+	            <p><b>"Design was selected as one of the best 3 out of 80 projects”</b></p>
+            </div> </div> </div>
+          </div>
+</div>
+        
+        
+
+</div>
+</div>
+</div>
+
+<div class="section" id="skill">
+  <div class="container">
+    <div class="h4 text-center mb-4 title">Professional Skills</div>
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
-            <div class="h4 mt-0 title">Bello!!</div>
-              <p>I am Aishwarya, a simple yet adventurous girl from Bangalore,India. I am an out of the box thinker and believe in keeping things simple. I am a problem solver, curious and a quick learner! </p>
-
-              <p>I have a strong theoretical background in Computer Science. I am fascinated by transformation of healthcare by AI and specifically interested in Preventive Healthcare</p>
+            <div class="h4 mt-0 title"></div>
+            <div class="row">
+              <div><strong class="text-uppercase">Programming and Scripting Languages:</strong><br>
+              <p>C, C++, Python, MATLAB, HTML, SQL</p>
+               
+              <strong class="text-uppercase">Frameworks and Tools:</strong><br>
+              Pytorch, Django, Apach Spark</div>
+            </div>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
+            <div class="h4 mt-0 title"></div>
             <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">21</div>
+              <div class="col-sm-4"><strong class="text-uppercase">Leadership Skills</strong></div>
+              <div class="col-sm-8">I started the Mentor-Mentee Program at IIITDM and lead a team of 30 Mentors and 250 Mentees</div>
             </div>
             <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">ar.aishwaryaraj@gmail.com</div>
+              <div class="col-sm-4"><strong class="text-uppercase">Project Management</strong></div>
+              <div class="col-sm-8">Lead the Team Nicotop at CIAP-AICTE Startup Mentorship Program -2018 and were in top 15 among 780 teams across India</div>
             </div>
 
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, Tamil, Hindi</div>
             </div>
           </div>
         </div>
@@ -97,8 +324,56 @@
 </div>
 
 
-<!---------------------------------------------------->
-
+<div class="section" id="Achievements">
+  <div class="container cc-reference">
+    <div class="h4 mb-4 text-center title">Achievements</div>
+    <div class="card" data-aos="zoom-in">
+      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
+          <li data-target="#cc-Indicators" data-slide-to="1"></li>
+          <li data-target="#cc-Indicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+        	<div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/aicte.JPG" alt="Image"/>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                 <div class="h4 mt-0 title">Canada India Acceleration Program 2018</div>
+                 <p class="category">NicoStop - One of the top 15 Teams </p>
+                 <p>The event attracted participation of 800 teams across India and 55 teams got an opportunity to represent their product at AICTE, New Delhi</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/htic.jpg" alt="Image"/>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="h4 mt-0 title"> Selected Team (NicoStop) of MedTech Hackathon 2018</div>
+                 <p class="category">Preincubated at HTIC-IIT Madras</p>
+                 <p>The Theme of the Hackathon was "Affordable and Scalable Healthcare" and we demonstrated the Proof of Concept for a smoking cessation device</p>
+              </div>
+            </div>
+          </div>
+          
+         <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/robot.jpg" alt="Image"/></div>
+              <div class="col-lg-6 col-md-6">
+                 <div class="h4 mt-0 title">Astyanax: Line Rollower Robot</div>
+                 <p class="category">Samgatha(National Tech Fest), IIITDM Kancheepuram – “Runners up”</p>
+                <p>Built an autonomous line follower robot using Arduino microcontroller and manual robot with ball picking mechanism.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
 <div class="section">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">"Life is a collection of moments. Cherish memories over things"</div>
@@ -127,15 +402,6 @@
       </div>
     </div>
 
-   <!--<div class="row">
-      <div class="col-md-7 nopadding">
-        <img src="images/fun/PUB.JPG"  style="max-width:100%">
-      </div>
-      <div class="col-md-5 nopadding ">
-        <img src="images/fun/vishai.jpg"style="max-width:100%">
-      </div>
-    </div>
--->
     <div class="row">
       <div class="col-md-4 nopadding">
         <img src="images/fun/shell.jpg"style="max-width: 100%">
@@ -149,332 +415,13 @@
     </div>
 </div>
 </div>
+ -->
 
-<!----------------------------------------->
-<div class="section">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-    
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2015 - Present</p>
-            <div class="h5">Bachelor's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Indian Institute of Technology, Design and Manfacturing, Kancheepuram</div>
-            <p class="category">Bachelor of Technology Computer Science</p>
-            <p>CGPA : 9.05</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2008-2015</p>
-            <div class="h5">High School</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">CMR National Public School</div>
-            <p class="category">Central Board of Secondary Education</p>
-            <p>Class 12 : 95.6% <br>Class 10 : 10 CGPA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="section" id="experience">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Professional Experience</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>May 2018 - Present</p>
-            <div class="h5">Research Intern</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">RBCDSAI Lab, IIT Madras</div>
-             <p class="category">Guide : Dr Balaraman Ravindran</p>
-            <p>I am working on  "Development of a Deep Learning Algorithm for Detection of Retinopathy in Retinal Fundus Photographs". The main categories are Diabetic and Hypertensive retinopathy. Interpreting these fundus photographs requires specialized training, and in many regions of the world there aren’t enough qualified graders to screen everyone who is at risk. This is where AI can help doctors identify patients in need, particularly among underserved populations.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>May 2017 - July 2017</p>
-            <div class="h5">Developer Intern</div>
-          </div>  
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">IDeaS Lab, Center for Product Design and Manufacturing, IISC Bangalore</div> 
-            <p class="category">Guide : Dr Amaresh Chakrabarti</p>
-            <p>Worked as a Full Stack Web Developer and Designed the Database for InDeaTe,a Computer-Based Platform with a Systematic Design Template and a Database of Methods and Tools which aims at improving sustainability considerations in design.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>May 2016 - June 2016</p>
-            <div class="h5">Summer Intern</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Gas Turbine Research and Establishment, DRDO</div>
-            <p class="category"></p>
-            <p>Implemented encryption and decryption of text files using DES algorithm in JAVA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="project">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Projects</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p><br><br>January 2018 - March 2018</p>
-          </div>  
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500" style="background-image: images/frs.png">
-          <div class="card-body">
-            <div class="h5">FRS BASED PORTABLE ATTENDENCE SYSTEM</div> 
-            <p class="category">Guide : Dr. Tapasil, Dr. Naveen Kumar, Dr. Shekar</p>
-            <p>The project is aimed at designing FRS(Fingerprint Recognition System) based portable attendance system which will manage the student attendance at IIITDM, Kancheepuram.</p>
-            <p>The Fingerprint Attendance System using Raspberry pi is based on feature matching algorithm and compare with previously stored templates of fingerprint against user’s fingerprint for authentication.</p>
-            <p>It consists of three phases namely; enrolment, attendance, synchronisation of data. An Attendance portal has also been developed as a part of this project for faculty to view the generated reports.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p><br>January 2018 - March 2018</p>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">HEART RISK PREDICTION BASED ON DATA MINING TECHNIQUES</div>
-            <p class="category">Guide : Dr. Ragunathan T </p>
-            <p>This project aids the physicians in predicting the medical condition that the patient is suffering from using data mining. It is a powerful tool for evidence based medicine. It is fed with various cardiac parameters and the corresponding medical conditions associated with them. It then processes the user specific data and comes up with any underlying patterns in it.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p> <br><br><br>July 2016 - March 2017</p>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">FILTER FOR INDUSTRIAL GASEUOUS EFFLUENTS</div> 
-            <p class="category">Guide : Dr. Sudhir Varadarajan</p>
-            <p>To reduce the amount of  gaseous effluents released by industries, an efficient dynamic filter was designed with inbuilt air quality monitoring system.</p>
-            <p>Employed the principles of system thinking to come up with the problem statement.</p>
-            <p>Applied the concepts of artificial intelligence to improve the product.</p>
-            <p>Ethnography studies to understand the social context of user and customer.</p>
-            <p><b>"Design was selected as one of the best three projects”</b></p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="section" id="skill">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Professional Skills</div>
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title"></div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Languages</strong></div>
-              <div class="col-sm-8">C, C++, Python, MATLAB,Java,HTML</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">CAD & EDA Tools</strong></div>
-              <div class="col-sm-8">AutoCAD, Cadence</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title"></div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Leadership Skills</strong></div>
-              <div class="col-sm-8">I started the Mentor-Mentee Program at IIITDM and lead a team of 30 Mentors and 250 Mentees</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Project Management</strong></div>
-              <div class="col-sm-8">Lead the Team Nicotop at CIAP-AICTE Startup Mentorship Program -2018 and were in top 15 among 780 teams across India</div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Writing and Communication.</strong></div>
-              <div class="col-sm-8">Do check out some of my articles on Medium!</div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="section" id="Achievements">
-  <div class="container cc-reference">
-    <div class="h4 mb-4 text-center title">Achievements</div>
-    <div class="card" data-aos="zoom-in">
-      <div class="carousel slide" id="cc-Indicators" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li class="active" data-target="#cc-Indicators" data-slide-to="0"></li>
-          <li data-target="#cc-Indicators" data-slide-to="1"></li>
-          <li data-target="#cc-Indicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/htic.jpg" alt="Image"/>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="h4 mt-0 title"> Selected Team (NicoStop) of MedTech Hackathon 2018</div>
-                 <p class="category">Preincubated at HTIC-IIT Madras</p>
-                 <p>The Theme of the Hackathon was "Affordable and Scalable Healthcare" and we demonstrated the Proof of Concept for a smoking cessation device</p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/aicte.JPG" alt="Image"/>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                 <div class="h4 mt-0 title">Canada India Acceleration Program 2018</div>
-                 <p class="category">NicoStop - One of the top 15 Teams </p>
-                 <p>The event attracted participation of 800 teams across India and 55 teams got an opportunity to represent their product at AICTE, New Delhi</p>
-              </div>
-            </div>
-          </div>
-         <div class="carousel-item">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 cc-reference-header"><img src="images/robot.jpg" alt="Image"/></div>
-              <div class="col-lg-6 col-md-6">
-                 <div class="h4 mt-0 title">Astyanax: Line Rollower Robot</div>
-                 <p class="category">Samgatha(National Tech Fest), IIITDM Kancheepuram – “Runners up”</p>
-                <p>Built an autonomous line follower robot using Arduino microcontroller and manual robot with ball picking mechanism.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url('images/staticmap.png');">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <form action="https://formspree.io/your@email.com" method="POST">
-                      <div class="p pb-3"><strong>Feel free to contact me </strong></div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <button class="btn btn-primary" type="submit">Send</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="col-md-6">
- 
-                    <p class="mb-0"><strong>Email</strong></p>
-                    <p>ar.aishwaryaraj@gmail.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div></div>
-    </div>
     <footer class="footer">
       <div class="container text-center"><a class="cc-facebook btn btn-link" href=""https://www.facebook.com/profile.php?id=100006312167268""><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-linkedin btn btn-link " href=""https://www.linkedin.com/in/aishwarya-rajasekaran""><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href=""https://www.instagram.com/chutter_putter/" "><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a><a class="cc-medium btn btn-link" href="https://medium.com/@ar.aishwaryaraj"><i class="fa fa-medium fa-2x " aria-hidden="true"></i></a>
       <div class="h4 title text-center">Aishwarya Rajasekaran</div>
       <div class="text-center text-muted">
-        <p>&copy; All rights reserved.<br>Design -TemplateFlip<a class="credit" href="https://templateflip.com" target="_blank"></a></p>
+        <p>&copy; All rights reserved.<br>Design adapted from TemplateFlip<a class="credit" href="https://templateflip.com" target="_blank"></a></p>
       </div>
     </footer>
     <script src="js/core/jquery.3.2.1.min.js"></script>
