@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>Matlab Geck Eater</h1>
+<div class="row">
+<div class="column"> 
+<p>Welcome to Matlab Geck Eater! You have arrived at this page because you found an Inside page that gave you a 404 error. This means you've unlocked the Matlab Geck Game! Below, you can play as the Matlab snake. Eat as many gecks as you can! </p>
+<p>Click 'Single Player' if you want to only eat gecks. Click 'Play Against Enemy' to eat gecks while avoiding an enemy snake. </p>
+<p><b>After clicking an option, press any arrow key to begin.</b></p>
+<button onclick="singlePlayer()">Single Player</button>
+<button onclick="againstEnemy()">Play Against Enemy</button>
+<p class="scrollable-place"> 
+        <button onclick="disableScroll()">Disable Scrolling</button> 
+        <button onclick="enableScroll()">Enable Scrolling</button> 
+ </p> 
+<div class="column"> <p> <i>This is the 2020 HackDay project created by HACK(H)ER, a team of 6 female interns. We built a web scraper in Python to find the broken pages in Inside and then created a game in a Chrome Extension for when a Mathworker finds one. We hope you enjoy! </i></p>
+</div>
+
+<canvas id = "gc" width="825" height="725"></canvas>
+</div>
+<script>
+// base game source: https://pastebin.com/Z3zhb7cY
+// scrolling source: https://www.geeksforgeeks.org/how-to-disable-scrolling-temporarily-using-javascript/#:~:text=How%20to%20disable%20scrolling%20temporarily%20using%20JavaScript%3F,-Scrolling%20can%20be&text=window.onscroll%20function-,The%20window.,effectively%20disable%20the%20scroll%20effect.
+
+class ScoreList {
+    constructor() {
+        this.scores = [];
+    }
+    
+    addScore(newScore) {
+        if (newScore > 0) {
+            this.scores.push(newScore);
+        }
+    }
+    
+    getScores() {
+        this.scores.sort((a,b) => (a<b) ? 1:-1);
+        return this.scores;
+    }
+}
+
+recentScores = new ScoreList();
+hasEnemy = false;
+hasMoved = false;
+speed = 200;
+function singlePlayer() {
+    hasEnemy=false;
+    speed = 120;
+    startGame();
+    
+}
+function againstEnemy() {
+    hasEnemy = true;
+    speed = 400;
+    startGame();
+    
+}
+
+
+function disableScroll() { 
+    // Get the current page scroll position 
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, 
+  
+        // if any scroll is attempted, set this to the previous value 
+        window.onscroll = function() { 
+            window.scrollTo(scrollLeft, scrollTop); 
+        }; 
+} 
+ function enableScroll() { 
+            window.onscroll = function() {}; 
+        } 
+
+function startGame() {
+    hasMoved = false;
+    canvas = document.getElementById("gc");
+    context = canvas.getContext("2d");
+    document.addEventListener("keydown", keyPush);
+    setInterval(game, speed); 
+    
+    gridSize = 25;
+    tileCount = 20;
+    boardSize = gridSize*tileCount;
+    player = new Location(10,10);
+    gecko = new Location(15,15);
+
+    xVelocity = yVelocity = 0;
+
+    trail = [];
+    tail = 5;
+    score = 0;
+    
+    if (hasEnemy) {
+        // enemy snake
+        enemy = new Location(5,5);
+        enemyXVelocity = enemyYVelocity = 0;
+        enemyTrail = [];
+        enemyTail = 5;
+     }
+       const snake = new Image();
+        snake.src = "https://cdn4.iconfinder.com/data/icons/animal-2-3/36/124-512.png";
+        const snakeBody = new Image();
+        snakeBody.src = "https://www.pngkey.com/png/full/968-9682806_green-circle-png-fluorescent-yellow-circle.png";
+
+    
+     // images
+    const matlab = new Image();
+    matlab.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/667px-Matlab_Logo.png";
+    const geckoImg = new Image();
+    geckoImg.src = "https://webstockreview.net/images/gecko-clipart-10.png";
+	//geckoImg.src = "https://library.kissclipart.com/20191028/evw/kissclipart-green-lizard-gecko-38c18fdcf2cf115e.png"
+    function game() {
+        
+        player.move(xVelocity, yVelocity);
+        
+        if (hasEnemy) {
+        	enemyRandomDirection();
+        	enemy.move(enemyXVelocity, enemyYVelocity);
+		}
+        context.fillStyle = "blanchedAlmond";
+        context.fillRect(0,0,boardSize,boardSize);
+
+        // update player snake
+        for (var i = 0; i < trail.length; i++) {
+            show_image(matlab, trail[i].x*gridSize, trail[i].y*gridSize)
+            touchingEnemy = false;
+            if (hasEnemy) {
+                touchingEnemy = trail[i].equals(enemy);
+                for (var j = 0; j < enemyTrail.length; j++) {
+                    touchingEnemy = touchingEnemy || trail[i].equals(enemyTrail[j]);
+                }
+            }
+            if (trail[i].equals(player) || touchingEnemy) { // hit yourself or enemy
+                game_over();
+            }
+        }
+
+        if (gecko.equals(player)) { // ate a geck
+            tail ++;
+            score++;
+            gecko.moveToRandomLocation();
+        }
+
+        trail.push(player.copy()); // update player locations
+        while(trail.length>tail) {
+            trail.shift();
+         }
+
+        if (hasEnemy){
+        	// update enemy snake
+            for (var i = 0; i < enemyTrail.length; i++) {
+                if (i==enemyTrail.length-1) { // head
+                    show_image(snake,enemyTrail[i].x*gridSize, enemyTrail[i].y*gridSize,gridSize);
+                } else { // body
+                    show_image(snakeBody,enemyTrail[i].x*gridSize, enemyTrail[i].y*gridSize, gridSize/1.2);
+                    }
+            }
+
+            enemyTrail.push(enemy.copy()); // update enemy locations
+            while(enemyTrail.length>enemyTail) {
+                enemyTrail.shift();
+            }
+        }
+        show_image(geckoImg, gecko.x*gridSize, gecko.y*gridSize); // draw gecko
+        drawScore();
+    }
+
+    function drawScore() {
+        context.fillStyle="white";
+        context.fillRect(0,boardSize,boardSize,100);
+        context.fillStyle="black";
+        context.font="48px Arial";
+        
+        if (hasMoved && xVelocity == yVelocity) {
+            context.fillText("Game Over!", 60, boardSize + 50);
+        } else {
+            context.fillText("Score: " + score, 100,boardSize+50);
+        }
+    }
+    
+
+    function enemyRandomDirection() {
+        direction = Math.floor(Math.random()*20);
+        switch(direction) {
+            case 0: // left
+                enemyXVelocity = -1;
+                enemyYVelocity = 0;
+                break;
+            case 1: // up
+                enemyXVelocity = 0;
+                enemyYVelocity = -1;
+                break;
+            case 2: // right
+                enemyXVelocity = 1;
+                enemyYVelocity = 0;
+                break;
+            case 3: // down
+                enemyXVelocity = 0;
+                enemyYVelocity = 1;
+                break;
+        }
+    }
+
+    function game_over() {
+    	hasEnded = true;
+        recentScores.addScore(score);
+        showTopScores();
+        tail = 5;
+        score = 0;
+        player.moveTo(10,10);
+        xVelocity=yVelocity = 0;
+        if(hasEnemy){
+        	enemyXVelocity = 0;
+        	enemyYVelocity = 0;
+        	enemy.moveTo(5,5);
+        }
+        
+        gecko.moveTo(15,15);
+    }
+
+    function keyPush(event) {
+        hasMoved = true;
+        switch(event.keyCode) {
+            case 37: // left
+                xVelocity=-1;
+                yVelocity=0;
+                break;
+            case 38: // up
+                xVelocity=0;
+                yVelocity=-1;
+                break;
+            case 39: // right
+                xVelocity=1;
+                yVelocity=0;
+                break;
+            case 40: // down
+                xVelocity=0;
+                yVelocity=1;
+                break;
+         }
+    }
+
+    function show_image(img,xpos,ypos, size=gridSize) {
+        const ctx = document.querySelector('canvas').getContext('2d');
+        const destWidth = size;
+        const destHeight = size;
+        ctx.drawImage(img, xpos, ypos, destWidth, destHeight);
+    }
+    
+  function showTopScores() {
+        context.fillStyle="white";
+        context.fillRect(boardSize,0,200,boardSize+100);
+        context.fillStyle="black";
+        context.font="24px Arial";
+         var scores = recentScores.getScores();  
+         context.fillText("Top Scores", boardSize + 50, 30)
+         for (i = 0; i < scores.length; i++) {  
+            context.fillText(scores[i], boardSize+100, 60 + 40*i);
+         }
+    }
+}
+
+class Location {
+        constructor(x,y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        copy() {
+            return new Location(this.x, this.y);
+        }
+
+        move(x,y) {
+            this.x += x;
+            this.y += y;
+            if (this.x<0) {
+                this.x = tileCount -1;
+            }
+
+            if (this.x > tileCount -1) {
+                this.x = 0;
+            }
+
+            if (this.y < 0) {
+                this.y = tileCount -1;
+            }
+
+            if (this.y > tileCount-1) {
+                this.y = 0;
+            }
+         }
+
+        equals(l) {
+            return this.x == l.x && this.y == l.y;
+        }
+
+        moveToRandomLocation() {
+            this.x = Math.floor(Math.random() * tileCount);
+            this.y = Math.floor(Math.random() * tileCount);
+        } 
+        
+        moveTo(x,y) {
+            this.x = x;
+            this.y=y;
+        }
+}    
+
+
+</script>
+<!-- edit your html here -->
+
+
+</div>
+
+
